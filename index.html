@@ -29,24 +29,24 @@
       margin-right: 2%;
     }
 
-    .funcao {
+    .function {
       color: #E47128;
       font-weight: 800;
       font-family: monospace;
     }
 
-    .tipoFuncao {
+    .typeFunction {
       font-family: monospace;
       color: #E47128
     }
 
-    .tipoFuncaoTab {
+    .typeFunctionTab {
       font-family: monospace;
       color: #E47128;
       padding-left: 2em;
     }
 
-    .valor {
+    .value {
       color: rgba(0, 0, 0, 0.87);
       font-family: monospace;
     }
@@ -66,7 +66,7 @@
 
   <script>
     function copy() {
-      var elm = document.getElementById("codigo");
+      var elm = document.getElementById("code");
       if (document.body.createTextRange) {
         var range = document.body.createTextRange();
         range.moveToElementText(elm);
@@ -74,7 +74,7 @@
         document.execCommand("Copy");
         alert("Copied to clipboard.");
 
-        // Para alguns Browsers
+        // For some Browsers
       } else if (window.getSelection) {
         var selection = window.getSelection();
         var range = document.createRange();
@@ -88,7 +88,7 @@
 
     function download(filename, text) {
 
-      var div = document.getElementById("codigo");
+      var div = document.getElementById("code");
       console.log(div.textContent);
       console.log(div.textContent.split(';').join(';\n'))
       var element = document.createElement('a');
@@ -116,7 +116,7 @@
   <div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: space-around">
     <div id="sketch-holder" style="flex:1; width: 200px;"></div>
     <div style="flex:1;">
-      <div disable class="textContainer" id="codigo"></div>
+      <div disable class="textContainer" id="code"></div>
       <button onclick="copy()">Copy</button>
       <button onclick="download()">Download</button>
     </div>

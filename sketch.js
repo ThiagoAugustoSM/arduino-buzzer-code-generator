@@ -1,29 +1,29 @@
 var textArduino =
-  "<span class='define'>#define</span><span class='valor'> NOTE_C4 262\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_CS4 277\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_D4 294\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_DS4 311\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_E4 330\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_F4 349\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_FS4 370\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_G4 392\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_GS4 415\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_A4 440\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_AS4 466\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_B4 494\n</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_C5 523\n\n</span><br><br>\
-<span class='define'>#define</span><span class='valor'> PIN_BUZZER 13\n\n</span><br><br>\
-<span class='tipoFuncao'>void </span><span class='funcao'>setup</span> <span class='valor'>() {\n</span><br>\
-<span class='tipoFuncaoTab'>\tpinMode</span><span class='valor'>(PIN_BUZZER, OUTPUT);</span><br>\
-<span class='valor'>}\n\n</span><br><br>\
-<span class='tipoFuncao'>void</span><span class='funcao'>loop</span> <span class='valor'>() {\n</span>";
+  "<span class='define'>#define</span><span class='value'> NOTE_C4 262\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_CS4 277\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_D4 294\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_DS4 311\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_E4 330\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_F4 349\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_FS4 370\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_G4 392\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_GS4 415\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_A4 440\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_AS4 466\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_B4 494\n</span><br>\
+<span class='define'>#define</span><span class='value'> NOTE_C5 523\n\n</span><br><br>\
+<span class='define'>#define</span><span class='value'> PIN_BUZZER 13\n\n</span><br><br>\
+<span class='typeFunction'>void </span><span class='function'>setup</span> <span class='value'>() {\n</span><br>\
+<span class='typeFunctionTab'>\tpinMode</span><span class='value'>(PIN_BUZZER, OUTPUT);</span><br>\
+<span class='value'>}\n\n</span><br><br>\
+<span class='typeFunction'>void</span><span class='function'>loop</span> <span class='value'>() {\n</span>";
 
-var textInicial = textArduino;
+var initalText = textArduino;
 var osc;
 var Notes = [];
 var create = false;
 
-var codigo = "";
+var code = "";
 var lastText = "";
 var fr = 30;
 var t2 = ["A", "S", "D", "F", "G", "H", "J"];
@@ -31,7 +31,7 @@ var delaySilence = 0;
 var running = false;
 
 function setup() {
-  codigo = select("#codigo");
+  code = select("#code");
 
   var canvas = createCanvas(600, 400);
   canvas.parent("sketch-holder");
@@ -64,16 +64,16 @@ function draw() {
     if (keySelected == "W") running = true;
     else if (keySelected == "E") {
       if (running) {
-        textArduino += "<span class='valor'>}</span>";
-        lastText = "<span class='valor'>}</span>";
-        codigo.html(textArduino);
+        textArduino += "<span class='value'>}</span>";
+        lastText = "<span class='value'>}</span>";
+        code.html(textArduino);
       }
       running = false;
     } else if (keySelected == "R") {
       Notes = [];
       running = false;
-      textArduino = textInicial;
-      codigo.html(textArduino);
+      textArduino = initalText;
+      code.html(textArduino);
       delaySilence = 0;
     }
     // Create new notes
@@ -86,10 +86,10 @@ function draw() {
 
       lastNote = Notes[Notes.length - 1];
       textArduino +=
-        "<br><span class='tipoFuncaoTab'>tone<span class='valor'>(PIN_BUZZER, NOTE_" +
+        "<br><span class='typeFunctionTab'>tone<span class='value'>(PIN_BUZZER, NOTE_" +
         lastNote.note +
         ");</span></span><br>";
-      codigo.html(textArduino);
+      code.html(textArduino);
     } else if (running && create == true && t2.includes(keySelected)) {
       // No silence anymore
       delaySilence = 0;
@@ -107,30 +107,30 @@ function draw() {
 
       textArduino +=
         "\
-                    <span class='tipoFuncaoTab'>delay<span class='valor'>(" +
+                    <span class='typeFunctionTab'>delay<span class='value'>(" +
         Math.floor((lastNote.height / fr) * 1000) +
         ");</span></span>\
                     ";
       lastText =
         "\
-                  <span class='tipoFuncaoTab'>delay<span class='valor'>(" +
+                  <span class='typeFunctionTab'>delay<span class='value'>(" +
         Math.floor((lastNote.height / fr) * 1000) +
         ");</span></span>\
                   ";
-      codigo.html(textArduino);
+      code.html(textArduino);
 
       playSound(lastNote.freq);
     }
 
     create = true;
     // Scroll div to bottom
-    codigo.elt.scrollTop = codigo.elt.scrollHeight;
+    code.elt.scrollTop = code.elt.scrollHeight;
   } else if (running) {
     create = false;
 
     if (!delaySilence) {
       textArduino +=
-        "<br><span class='tipoFuncaoTab'>noTone</span><span class='valor'>(PIN_BUZZER);</span><br>";
+        "<br><span class='typeFunctionTab'>noTone</span><span class='value'>(PIN_BUZZER);</span><br>";
     } else {
       textArduino = textArduino.substring(
         0,
@@ -140,19 +140,19 @@ function draw() {
 
     delaySilence++;
     textArduino +=
-      "<span class='tipoFuncaoTab'>delay<span class='valor'>(" +
+      "<span class='typeFunctionTab'>delay<span class='value'>(" +
       Math.floor((delaySilence / fr) * 1000) +
       ");</span></span>\
                   <br>";
     lastText =
-      "<span class='tipoFuncaoTab'>delay<span class='valor'>(" +
+      "<span class='typeFunctionTab'>delay<span class='value'>(" +
       Math.floor((delaySilence / fr) * 1000) +
       ");</span></span>\
               <br>";
-    codigo.html(textArduino);
+    code.html(textArduino);
 
     // Scroll div to bottom
-    codigo.elt.scrollTop = codigo.elt.scrollHeight;
+    code.elt.scrollTop = code.elt.scrollHeight;
 
     stopSound();
   }
