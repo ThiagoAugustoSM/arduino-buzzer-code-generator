@@ -77,19 +77,11 @@
 
       function download(filename, text) {
         
-        
         var div = document.getElementById("codigo");
         console.log(div.textContent);
         console.log(div.textContent.split(';').join(';\n'))
         var element = document.createElement('a');
-        var element2 = document.createElement('textarea');
-        element2.setAttribute("id", "dois");
-        console.log(element2);
-        var pasteText = document.querySelector("#dois");
-        pasteText.focus();
-        document.execCommand("paste");
-        console.log(pasteText.textContent);
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(div.textContent.split(';').join(';\n')));
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(div.textContent));
         element.setAttribute('download', 'buzzer.ino');
 
         element.style.display = 'none';

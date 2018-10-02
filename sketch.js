@@ -1,21 +1,21 @@
-var textArduino = "<span class='define'>#define</span><span class='valor'> NOTE_C4 262</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_CS4 277</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_D4 294</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_DS4 311</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_E4 330</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_F4 349</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_FS4 370</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_G4 392</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_GS4 415</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_A4 440</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_AS4 466</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_B4 494</span><br>\
-<span class='define'>#define</span><span class='valor'> NOTE_C5 523</span><br><br>\
-<span class='define'>#define</span><span class='valor'> PIN_BUZZER 13</span><br><br>\
-<span class='tipoFuncao'>void </span><span class='funcao'>setup</span> <span class='valor'>() {</span><br>\
-<span class='tipoFuncaoTab'>pinMode</span><span class='valor'>(PIN_BUZZER, OUTPUT);</span><br>\
-<span class='valor'>}</span><br>  <br>\
-<span class='tipoFuncao'>void </span><span class='funcao'>loop</span> <span class='valor'>() {</span>";
+var textArduino = "<span class='define'>#define</span><span class='valor'> NOTE_C4 262\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_CS4 277\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_D4 294\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_DS4 311\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_E4 330\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_F4 349\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_FS4 370\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_G4 392\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_GS4 415\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_A4 440\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_AS4 466\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_B4 494\n</span><br>\
+<span class='define'>#define</span><span class='valor'> NOTE_C5 523\n\n</span><br><br>\
+<span class='define'>#define</span><span class='valor'> PIN_BUZZER 13\n\n</span><br><br>\
+<span class='tipoFuncao'>void </span><span class='funcao'>setup</span> <span class='valor'>() {\n</span><br>\
+<span class='tipoFuncaoTab'>\tpinMode</span><span class='valor'>(PIN_BUZZER, OUTPUT);</span><br>\
+<span class='valor'>}\n\n</span><br><br>\
+<span class='tipoFuncao'>void</span><span class='funcao'>loop</span> <span class='valor'>() {\n</span>";
 
 var textInicial = textArduino;
 var osc;
