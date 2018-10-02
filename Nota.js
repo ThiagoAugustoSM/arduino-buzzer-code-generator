@@ -6,7 +6,6 @@ class Nota {
     this.posY = posY;
     this.tecla = tecla;
     this.espacamento = 40;
-
     this.editData();
     this.velocidadeY = 4;
   }
