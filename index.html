@@ -90,7 +90,7 @@
         document.execCommand("paste");
         console.log(pasteText.textContent);
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(div.textContent.split(';').join(';\n')));
-        element.setAttribute('download', 'music.ino');
+        element.setAttribute('download', 'buzzer.ino');
 
         element.style.display = 'none';
         document.body.appendChild(element);
