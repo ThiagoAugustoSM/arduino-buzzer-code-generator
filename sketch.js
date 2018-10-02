@@ -140,7 +140,11 @@ function draw() {
     stopSound();
   }
   
-  Notas.forEach((item) => {
+
+  Notas.forEach((item, index, object) => {
+    if(item.isUpScreen(400)){
+      object.splice(index, 1);
+    };
     item.fillColor();
     item.changePosY();
     item.drawNota();

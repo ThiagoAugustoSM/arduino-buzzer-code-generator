@@ -75,6 +75,12 @@ class Nota {
     fill(this.color);
   }
 
+  isUpScreen(screenHeight){
+    if(this.posY + this.altura < 0)
+      return true;
+    return false;
+  }
+
   drawNota () {
     noStroke();
     rect(this.posX + 30, this.posY, this.largura, this.altura, 20);
