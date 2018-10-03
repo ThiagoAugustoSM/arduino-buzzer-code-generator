@@ -90,9 +90,10 @@
 
       var div = document.getElementById("code");
       console.log(div.textContent);
-      console.log(div.textContent.split(';').join(';\n'))
-      var element = document.createElement('a');
-      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(div.textContent));
+      console.log(div.textContent.replace(/ +(?= )/g,''))
+      var element = document.createElement('a');  
+
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(div.textContent.replace(/ +(?= )/g,'')));
       element.setAttribute('download', 'buzzer.ino');
 
       element.style.display = 'none';

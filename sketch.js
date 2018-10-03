@@ -16,7 +16,7 @@ var textArduino =
 <span class='typeFunction'>void </span><span class='function'>setup</span> <span class='value'>() {\n</span><br>\
 <span class='typeFunctionTab'>\tpinMode</span><span class='value'>(PIN_BUZZER, OUTPUT);</span><br>\
 <span class='value'>}\n\n</span><br><br>\
-<span class='typeFunction'>void</span><span class='function'>loop</span> <span class='value'>() {\n</span>";
+<span class='typeFunction'>void</span><span class='function'> loop</span> <span class='value'>() {\n</span>";
 
 var initalText = textArduino;
 var osc;
@@ -88,7 +88,7 @@ function draw() {
       textArduino +=
         "<br><span class='typeFunctionTab'>tone<span class='value'>(PIN_BUZZER, NOTE_" +
         lastNote.note +
-        ");</span></span><br>";
+        ");\n</span></span><br>";
       code.html(textArduino);
     } else if (running && create == true && t2.includes(keySelected)) {
       // No silence anymore
@@ -109,13 +109,13 @@ function draw() {
         "\
                     <span class='typeFunctionTab'>delay<span class='value'>(" +
         Math.floor((lastNote.height / fr) * 1000) +
-        ");</span></span>\
+        ");\n\n</span></span>\
                     ";
       lastText =
         "\
                   <span class='typeFunctionTab'>delay<span class='value'>(" +
         Math.floor((lastNote.height / fr) * 1000) +
-        ");</span></span>\
+        ");\n\n</span></span>\
                   ";
       code.html(textArduino);
 
@@ -130,7 +130,7 @@ function draw() {
 
     if (!delaySilence) {
       textArduino +=
-        "<br><span class='typeFunctionTab'>noTone</span><span class='value'>(PIN_BUZZER);</span><br>";
+        "<br><span class='typeFunctionTab'>noTone</span><span class='value'>(PIN_BUZZER);\n</span><br>";
     } else {
       textArduino = textArduino.substring(
         0,
@@ -142,12 +142,12 @@ function draw() {
     textArduino +=
       "<span class='typeFunctionTab'>delay<span class='value'>(" +
       Math.floor((delaySilence / fr) * 1000) +
-      ");</span></span>\
+      ");\n\n</span></span>\
                   <br>";
     lastText =
       "<span class='typeFunctionTab'>delay<span class='value'>(" +
       Math.floor((delaySilence / fr) * 1000) +
-      ");</span></span>\
+      ");\n\n</span></span>\
               <br>";
     code.html(textArduino);
 
