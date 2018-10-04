@@ -59,8 +59,8 @@ function draw() {
   text("H", 270, 50);
   text("J", 310, 50);
 
-  if (keyIsPressed) {
-    let keySelected = String.fromCharCode(keyCode).toUpperCase();
+  let keySelected = String.fromCharCode(keyCode).toUpperCase();
+  if (keyIsPressed && (keySelected == "E" || keySelected == "R" || keySelected == "W" || t2.includes(keySelected))) {
     if (keySelected == "W") running = true;
     else if (keySelected == "E") {
       if (running) {
