@@ -14,42 +14,42 @@ class Note {
     if (this.key == "A") {
       this.posX = this.posX + this.spacing * 1;
       this.note = "C4";
-      this.color = color("#23FFF0");
+      this.color = color("#ff0000");
       this.freq = 261;
     } else if (this.key == "S") {
       this.posX = this.posX + this.spacing * 2;
       this.note = "D4";
-      this.color = color("#3C0CE8");
+      this.color = color("#ff6600");
       this.freq = 294;
     } else if (this.key == "D") {
       this.posX = this.posX + this.spacing * 3;
       this.note = "E4";
-      this.color = color("#FF0000");
+      this.color = color("#ffff00");
       this.freq = 330;
     } else if (this.key == "F") {
       this.posX = this.posX + this.spacing * 4;
       this.note = "F4";
-      this.color = color("#E89F0C");
+      this.color = color("#66ff33");
       this.freq = 349;
     } else if (this.key == "G") {
       this.posX = this.posX + this.spacing * 5;
       this.note = "G4";
-      this.color = color("#7AFF0D");
+      this.color = color("#6699ff");
       this.freq = 392;
     } else if (this.key == "H") {
       this.posX = this.posX + this.spacing * 6;
       this.note = "A4";
-      this.color = color("#FFC323");
+      this.color = color("#000080");
       this.freq = 440;
     } else if (this.key == "J") {
       this.posX = this.posX + this.spacing * 7;
       this.note = "B4";
-      this.color = color("#90E80C");
+      this.color = color("#9900ff");
       this.freq = 494;
     } else if (this.key == "K") {
       this.posX = this.posX + this.spacing * 8;
       this.note = "C5";
-      this.color = color("#90E80C");
+      this.color = color("#ff66cc");
       this.freq = 523;
     } else {
       this.posX = this.posX + -1 * 7;
