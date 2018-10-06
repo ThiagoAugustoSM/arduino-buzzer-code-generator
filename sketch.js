@@ -22,6 +22,8 @@ var initalText = textArduino;
 var osc;
 var Notes = [];
 var create = false;
+var lastKeyCode;
+
 
 var code = "";
 var lastText = "";
@@ -60,7 +62,7 @@ function draw() {
   text("J", 310, 50);
 
   let keySelected = String.fromCharCode(keyCode).toUpperCase();
-  if (keyIsPressed && (keySelected == "E" || keySelected == "R" || keySelected == "W" || t2.includes(keySelected))) {
+  if (keyIsPressed) {
     if (keySelected == "W") running = true;
     else if (keySelected == "E") {
       if (running) {
@@ -76,13 +78,17 @@ function draw() {
       code.html(textArduino);
       delaySilence = 0;
     }
+    
     // Create new notes
-    else if (running === true && create === false && t2.includes(keySelected)) {
+    else if (running && (!create || lastKeyCode != keyCode) && t2.includes(keySelected)) { 
+      //update lasteyCode
+      lastKeyCode = keyCode;
+
       // No silence anymore
       delaySilence = 0;
 
       // If it was one of the piano's keys
-      Notes.push(new Note(0, 400, String.fromCharCode(keyCode).toUpperCase()));
+      Notes.push(new Note(0, 400, String.fromCharCode(lastKeyCode).toUpperCase()));
 
       lastNote = Notes[Notes.length - 1];
       textArduino +=
@@ -90,7 +96,10 @@ function draw() {
         lastNote.note +
         ");\n</span></span><br>";
       code.html(textArduino);
-    } else if (running && create == true && t2.includes(keySelected)) {
+    } 
+    
+    //increment note
+    else if (running && create && lastKeyCode != 0) {
       // No silence anymore
       delaySilence = 0;
 
@@ -125,9 +134,12 @@ function draw() {
     create = true;
     // Scroll div to bottom
     code.elt.scrollTop = code.elt.scrollHeight;
-  } else if (running) {
+  } 
+  
+  //create blank space
+  else if (running) {
     create = false;
-
+    lastKeyCode = 0;
     if (!delaySilence) {
       textArduino +=
         "<br><span class='typeFunctionTab'>noTone</span><span class='value'>(PIN_BUZZER);\n</span><br>";
