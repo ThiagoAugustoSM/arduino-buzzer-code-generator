@@ -76,13 +76,13 @@
   </style>
 
   <script>
-    function copy() {
+    function myf() {
       var elm = document.getElementById("code");
       if (document.body.createTextRange) {
         var range = document.body.createTextRange();
         range.moveToElementText(elm);
         range.select();
-        document.execCommand("Copy");
+        document.execCommand("copy");
         alert("Copied to clipboard.");
 
         // For some Browsers
@@ -92,7 +92,7 @@
         range.selectNodeContents(elm);
         selection.removeAllRanges();
         selection.addRange(range);
-        document.execCommand("Copy");
+        document.execCommand("copy");
         alert("Copied to clipboard.");
       }
     }
@@ -130,7 +130,7 @@
     <div style="flex:1; justify-items: center; align-items: center">
       <div disable class="textContainer" id="code"></div>
       <div style="flex: 1; justify-items: center; align-items: center; margin: auto auto">
-        <button onclick="copy()">Copy</button>
+        <button onclick="myf()">Copy</button>
         <button onclick="download()">Download</button>
       </div>
     </div>
