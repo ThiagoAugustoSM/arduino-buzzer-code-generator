@@ -76,7 +76,7 @@
   </style>
 
   <script>
-    function copy() {
+    function copyCode() {
       var elm = document.getElementById("code");
       if (document.body.createTextRange) {
         var range = document.body.createTextRange();
@@ -130,7 +130,7 @@
     <div style="flex:1; justify-items: center; align-items: center">
       <div disable class="textContainer" id="code"></div>
       <div style="flex: 1; justify-items: center; align-items: center; margin: auto auto">
-        <button onclick="copy()">Copy</button>
+        <button onclick="copyCode()">Copy</button>
         <button onclick="download()">Download</button>
       </div>
     </div>
