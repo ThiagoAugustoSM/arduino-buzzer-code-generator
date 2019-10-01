@@ -13,3 +13,5 @@ Open the [live preview](https://ThiagoAugustoSM.github.io/arduino-buzzer-code-ge
 ## Uploading to Arduino
 
 Download the buzzer.ino file and you will be able to upload it to your arduino using the Arduino IDE or others.
+
+![sample](example.png)
