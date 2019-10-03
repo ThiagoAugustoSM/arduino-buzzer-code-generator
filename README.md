@@ -2,6 +2,8 @@
 
 A p5.js project that allows you to play on a pseudo piano and create your arduino code lively to use on a buzzer/speaker.
 
+![sample](example.png)
+
 ## How to use it
 
 Open the [live preview](https://ThiagoAugustoSM.github.io/arduino-buzzer-code-generator/)
@@ -13,3 +15,4 @@ Open the [live preview](https://ThiagoAugustoSM.github.io/arduino-buzzer-code-ge
 ## Uploading to Arduino
 
 Download the buzzer.ino file and you will be able to upload it to your arduino using the Arduino IDE or others.
+
